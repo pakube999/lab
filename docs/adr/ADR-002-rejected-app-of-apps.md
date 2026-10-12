@@ -20,3 +20,10 @@ are applied manually via kubectl apply.
 - Manual kubectl apply required for each new app — acceptable overhead
   for a single-operator cluster
 - Would reconsider at team scale where coordination overhead justifies it
+
+## Known Gap
+ArgoCD Application manifests in `infra/argocd/applications/` require manual
+`kubectl apply` after any change — ArgoCD does not watch its own Application
+manifests without app-of-apps or an ApplicationSet. This is a documented
+tradeoff at this scale. A future ApplicationSet could close this gap without
+the full recursion risk of app-of-apps.
