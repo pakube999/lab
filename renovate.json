@@ -11,6 +11,10 @@
     {
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": false
+    },
+    {
+      "matchPackageNames": ["ghcr.io/immich-app/immich-charts/immich"],
+      "versioning": "helm"
     }
   ]
 }
