@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-10-12
+- Configured Alertmanager email notifications via Gmail App Password
+- Alerts routing: critical (1h repeat), warning (6h repeat)
+- App password stored as SealedSecret, no credentials in repo
+
 ## 2026-10-07
 - Observed pakube2 worker node i/o timeout causing cluster-wide pod restart
 - Cluster self-healed within ~2 minutes, all pods returned to healthy
