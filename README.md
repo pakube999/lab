@@ -72,6 +72,15 @@ every app converted since has been checked the same careful way — confirm the 
 chart source, confirm the values file actually has everything currently live,
 review the diff before syncing. Full writeup: [`infra/argocd/README.md`](./infra/argocd)
 
+### Applying ArgoCD Application manifest changes
+
+ArgoCD Application manifests in `infra/argocd/applications/` are not auto-detected.
+After any PR that modifies or adds an Application manifest, run:
+
+```bash
+kubectl apply -f /home/pablo/repos/lab/infra/argocd/applications/
+```
+
 ## CI pipeline
 
 Added as part of the Home Assistant deployment — first app built through a full
