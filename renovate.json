@@ -13,8 +13,8 @@
       "automerge": false
     },
     {
-      "matchPackageNames": ["ghcr.io/immich-app/immich-charts/immich"],
-      "versioning": "helm"
+      "matchPackageNames": ["ghcr.io/immich-app/immich-charts/immich/immich"],
+      "enabled": false
     }
   ]
 }
