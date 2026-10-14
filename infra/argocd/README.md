@@ -3,8 +3,8 @@
 ## What it is
 ArgoCD, syncing this repo's manifests to the cluster instead of manual
 `kubectl apply` / `helm install`. Currently manages `homepage`, `plex`,
-`navidrome`, and `audiobookshelf`. Everything else (`immich`, monitoring,
-infra components) is still plain Helm — conversion is ongoing.
+`navidrome`, `audiobookshelf`, `immich` and  `monitoring`. ArgoCD appof apps
+is being considered
 
 ## Why I added it
 Closes the biggest structural gap in the original cluster: everything up to
@@ -24,10 +24,9 @@ skill for the DevOps/platform roles I'm building toward.
 - **Rollout order**: incremental, not all-at-once. Low-risk apps first
   (`homepage` as the pilot), `infra/` last — highest blast radius if a bad
   sync ever takes out ingress or cert-manager.
-- **Sync policy**: manual everywhere right now (`prune: false`,
-  `selfHeal: false`). Wanted to trust the pattern against real changes
-  before letting anything apply automatically. Revisit once more apps have
-  proven stable.
+- **Sync policy**: (`prune: false`, `selfHeal: true`). Wanted to trust the 
+  pattern against real changes and have now changed to selfHeal = true. 
+  Revisit once more apps have proven stable.
 - **Bootstrap exception**: ArgoCD itself is installed manually, once — the
   standard "can't GitOps the tool that does GitOps" case.
 - **App of apps — deliberately not adopted.** Considered managing ArgoCD's
@@ -130,6 +129,5 @@ With the multi-source pattern established and battle-tested:
 6. Commit the Application manifest, update that app's own README.
 
 ## Status
-Working, in active use. 4 of ~8 apps converted. Next up per the original
-rollout order: monitoring stack, then remaining media (`immich`), then
-`infra/` components last.
+Working, in active use. 7 of ~8 apps converted. Next up per the original
+rollout order: reconsider app of apps.
