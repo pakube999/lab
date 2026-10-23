@@ -27,3 +27,8 @@
 
 ## Prior
 - See git log and README for evolutionary history
+
+## 2026-10-25
+- Attempted Minio deployment for Velero backup target
+- Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
+- Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
