@@ -95,6 +95,13 @@ GitHub Actions runs on every PR to main:
 A bad values file or invalid manifest now fails the PR check before ArgoCD
 ever sees it. Workflow: [`.github/workflows/helm-lint.yaml`](./.github/workflows/helm-lint.yaml)
 
+## Infrastructure as Code
+
+This repo covers the cluster layer. SaaS configuration (GitHub settings, Cloudflare DNS) 
+is managed via Terraform in a separate private repo, following the same GitOps principles.
+See [ADR-007](./docs/adr/ADR-007-terraform-for-saas-config.md) for the reasoning behind 
+the separation.
+
 ## How this evolved
 
 Started with an old Raspberry Pi running Pi-hole. Transitioned to two Pis clustered
