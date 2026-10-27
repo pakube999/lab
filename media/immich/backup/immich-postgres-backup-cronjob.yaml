@@ -1,0 +1,57 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: immich-postgres-backup
+  namespace: immich
+spec:
+  schedule: "0 2 * * *"  # 2am daily
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: pg-dump
+              image: ghcr.io/cloudnative-pg/postgresql:16
+              env:
+                - name: PGPASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: immich-postgres-app
+                      key: password
+              command:
+                - /bin/sh
+                - -c
+                - |
+                  TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+                  pg_dump \
+                    -h immich-postgres-rw \
+                    -U $(cat /etc/pgcreds/username) \
+                    -d $(cat /etc/pgcreds/dbname) \
+                    -F c \
+                    -f /backups/immich_${TIMESTAMP}.dump
+                  echo "Backup completed: immich_${TIMESTAMP}.dump"
+                  # Keep only last 7 backups
+                  ls -t /backups/immich_*.dump | tail -n +8 | xargs rm -f
+              volumeMounts:
+                - name: backup-storage
+                  mountPath: /backups
+                - name: pgcreds
+                  mountPath: /etc/pgcreds
+                  readOnly: true
+          volumes:
+            - name: backup-storage
+              nfs:
+                server: 192.168.1.2
+                path: /volume1/backups
+            - name: pgcreds
+              secret:
+                secretName: immich-postgres-app
+                items:
+                  - key: username
+                    path: username
+                  - key: dbname
+                    path: dbname
