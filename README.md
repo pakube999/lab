@@ -123,4 +123,4 @@ previous one was stable and understood.
 - [ ] 2-node cluster; considering a low-power 3-node HA setup down the line
 - [ ] Eventual home network overhaul (Mikrotik)
 - [ ] Image scanning / policy enforcement (Trivy, Kyverno) — not yet in pipeline
-- [ ] Postgres backup strategy for Immich metadata
+- [x] ~~Postgres backup strategy for Immich metadata~~ — nightly pg_dump CronJob to NAS, 7 day retention

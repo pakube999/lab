@@ -95,12 +95,6 @@ corrected, since the live cluster already matched the values file exactly.
 ## Status
 - [x] Running stable
 - [x] TLS configured
-- [~] Backed up / persistent data protected — photo/video library itself is 
-  safe (lives on NAS, backed up nightly). Postgres metadata backup not yet in 
-  place; low priority for now since the cluster runs on repurposed laptop 
-  hardware slated for a future upgrade — will revisit once hardware is settled.
-- [~] Monitored — hardware-level metrics visible on the homepage dashboard; no 
-  alerting configured yet, and nothing Immich-specific (job queue health, 
-  failed uploads, etc.) — general gap across the cluster, not unique to this app.
-- [x] Full migration from Synology Moments complete — via `immich-cli` bulk 
-  import, not the External Library feature (see Gotchas)
+- [x] Backed up / persistent data protected — photo/video library lives on NAS, backed up nightly. Postgres metadata backed up nightly via CronJob to NAS (`media/immich/backup/`) — 65MB compressed dump, 7 day retention.
+- [~] Monitored — hardware-level metrics visible on the homepage dashboard; no alerting configured yet, and nothing Immich-specific (job queue health, failed uploads, etc.) — general gap across the cluster, not unique to this app.
+- [x] Full migration from Synology Moments complete — via `immich-cli` bulk import, not the External Library feature (see Gotchas)

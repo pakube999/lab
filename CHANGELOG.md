@@ -32,3 +32,15 @@
 - Attempted Minio deployment for Velero backup target
 - Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
 - Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
+
+## 2026-10-27
+- Added nightly Immich Postgres backup CronJob to NAS
+- 65MB compressed dump, 7 day retention
+- Credentials from existing SealedSecret, no plaintext in repo
+- Expanded CI pipeline to validate all apps (see earlier entry)
+
+## 2026-10-27
+- Added nightly Immich Postgres backup CronJob to NAS
+- 65MB compressed dump, 7 day retention
+- Credentials from existing SealedSecret, no plaintext in repo
+- Expanded CI pipeline to validate all apps (see earlier entry)
