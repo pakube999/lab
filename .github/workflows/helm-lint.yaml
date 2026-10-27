@@ -37,12 +37,54 @@ jobs:
           curl -sSL https://github.com/yannh/kubeconform/releases/latest/download/kubeconform-linux-amd64.tar.gz \
             | tar -xz && sudo mv kubeconform /usr/local/bin/
 
-      - name: Validate Home Assistant manifests
+      - name: Validate Home Assistant
         run: |
           helm template homeassistant pajikos/home-assistant \
             --namespace homeassistant \
             --values homeassistant/homeassistant-values.yaml \
-            | kubeconform \
-              --strict \
-              --ignore-missing-schemas \
+            | kubeconform --strict --ignore-missing-schemas \
               --kubernetes-version 1.32.0
+
+      - name: Validate Audiobookshelf
+        run: |
+          helm template audiobookshelf geek-cookbook/audiobookshelf \
+            --namespace audiobookshelf \
+            --values media/audiobookshelf/audiobookshelf-values.yaml \
+            | kubeconform --strict --ignore-missing-schemas \
+              --kubernetes-version 1.32.0
+
+      - name: Validate Homepage
+        run: |
+          helm template homepage jameswynn/homepage \
+            --namespace homepage \
+            --values homepage/homepage-values.yaml \
+            | kubeconform --strict --ignore-missing-schemas \
+              --kubernetes-version 1.32.0
+
+      - name: Validate Navidrome
+        run: |
+          helm template navidrome djjudas21/navidrome \
+            --namespace media \
+            --values media/navidrome/navidrome-values.yaml \
+            | kubeconform --strict --ignore-missing-schemas \
+              --kubernetes-version 1.32.0
+
+      - name: Validate Plex
+        run: |
+          helm template plex bjw-s/app-template \
+            --namespace plex \
+            --values media/plex/plex-values.yaml \
+            | kubeconform --strict --ignore-missing-schemas \
+              --kubernetes-version 1.32.0
+
+      - name: Validate Prometheus Stack
+        run: |
+          helm template prometheus-stack prometheus-community/kube-prometheus-stack \
+            --namespace monitoring \
+            --values monitoring/prometheus/values.yaml \
+            | kubeconform --strict --ignore-missing-schemas \
+              --kubernetes-version 1.32.0
+
+      # Immich uses an OCI chart (oci://ghcr.io/immich-app/immich-charts/immich)
+      # helm template does not support OCI charts without docker login
+      # Immich validation is excluded until a workaround is identified
