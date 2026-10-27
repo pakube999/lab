@@ -81,7 +81,7 @@ config:
             widget:
               type: iframe
               name: Pi 1 Temp
-              src: "http://192.168.1.10:4000/d-solo/ad6wzbp/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-1&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad6wzbp/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-1&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -92,7 +92,7 @@ config:
             widget:
               type: iframe
               name: Pi 2 Temp
-              src: "http://192.168.1.10:4000/d-solo/ad6wzbp/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-2&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad6wzbp/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-2&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -103,7 +103,7 @@ config:
             widget:
               type: iframe
               name: PIDNS Network
-              src: "http://192.168.1.10:4000/d-solo/adwq628/Networking?orgId=1&from=now-2h&to=now&panelId=panel-1&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/adwq628/Networking?orgId=1&from=now-2h&to=now&panelId=panel-1&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -114,7 +114,7 @@ config:
             widget:
               type: iframe
               name: PIDNS2 Network
-              src: "http://192.168.1.10:4000/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-2&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-2&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -125,7 +125,7 @@ config:
             widget:
               type: iframe
               name: PIDNS CPU
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-6h&to=now&panelId=panel-7&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-6h&to=now&panelId=panel-7&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -136,7 +136,7 @@ config:
             widget:
               type: iframe
               name: PIDNS memory
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-6h&to=now&panelId=panel-8&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-6h&to=now&panelId=panel-8&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -148,7 +148,7 @@ config:
             widget:
               type: iframe
               name: PAKUBE trend
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-3&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-3&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -159,7 +159,7 @@ config:
             widget:
               type: iframe
               name: PAKUBE2 trend
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-4&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-4&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -170,7 +170,7 @@ config:
             widget:
               type: iframe
               name: Pi 1 Temp
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-1&refresh=5s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-1&refresh=5s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -181,7 +181,7 @@ config:
             widget:
               type: iframe
               name: Pi 1 Temp
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-2&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-2&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -192,7 +192,7 @@ config:
             widget:
               type: iframe
               name: PIDNS2 Network
-              src: "http://192.168.1.10:4000/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-3&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-3&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -203,7 +203,7 @@ config:
             widget:
               type: iframe
               name: PIDNS2 Network
-              src: "http://192.168.1.10:4000/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-4&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/adwq628/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-4&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -214,7 +214,7 @@ config:
             widget:
               type: iframe
               name: PIDNS2 Network
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-9&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-9&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -225,7 +225,7 @@ config:
             widget:
               type: iframe
               name: PIDNS2 Network
-              src: "http://192.168.1.10:4000/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-6&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/pidns-temp?orgId=1&from=now-2h&to=now&panelId=panel-6&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -237,7 +237,7 @@ config:
             widget:
               type: iframe
               name: Memory Use
-              src: "http://192.168.1.10:4000/d-solo/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster?orgId=1&from=now-1h&to=now&var-datasource=default&var-cluster=&var-namespace=argocd&var-type=$__all&refresh=10s&panelId=panel-9&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/efa86fd1d0c121a26444b636a3f509a8/kubernetes-compute-resources-cluster?orgId=1&from=now-1h&to=now&var-datasource=default&var-cluster=&var-namespace=argocd&var-type=$__all&refresh=10s&panelId=panel-9&hideLogo=true"
               classes: "col-span-2 h-52"
               referrerPolicy: same-origin
               allowFullscreen: false
