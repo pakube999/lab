@@ -32,3 +32,8 @@
 - Attempted Minio deployment for Velero backup target
 - Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
 - Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
+
+## 2026-10-27
+- Expanded CI pipeline to validate all apps via kubeconform
+- Coverage: Home Assistant, Audiobookshelf, Homepage, Navidrome, Plex, Prometheus
+- Immich excluded — OCI chart requires registry auth for helm template
