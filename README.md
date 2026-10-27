@@ -116,7 +116,6 @@ previous one was stable and understood.
 
 Selected posts documenting the build process, what broke, and lessons learned:
 
-- [How ArgoCD Took Down My Homepage](https://codexasystems.net/blog/argocd-outage/) — the first GitOps outage, root cause and fix
 - [Running Blowfish on Linux — What Nobody Tells You](https://codexasystems.net/blog/running-blowfish-on-linux/) — SHA512 filename fix and Hugo version pitfalls  
 - [MinIO's Commercial Pivot — A Homelab Casualty](https://codexasystems.net/blog/minio-commercial-pivot/) — why MinIO images disappeared from public registries
 - [Terraform and ArgoCD — Two Tools, One Philosophy](https://codexasystems.net/blog/terraform-argocd-separation/) — IaC separation of concerns
