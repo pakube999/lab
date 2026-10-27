@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-10-27
+- Expanded CI pipeline to validate all apps via kubeconform
+- Coverage: Home Assistant, Audiobookshelf, Homepage, Navidrome, Plex, Prometheus
+- Immich excluded — OCI chart requires registry auth for helm template
+
+## 2026-10-26
+- Added Terraform infrastructure repo (private)
+- Cloudflare DNS records under Terraform management (7 of 9 records)
+- GitHub repositories and branch rulesets under Terraform management
+- MX records excluded — Cloudflare provider limitation with duplicate-named records
+- See ADR-007 for separation of concerns rationale
+
+## 2026-10-25
+- Attempted Minio deployment for Velero backup target
+- Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
+- Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
+
 ## 2026-10-12
 - Configured Alertmanager email notifications via Gmail App Password
 - Alerts routing: critical (1h repeat), warning (6h repeat)
@@ -32,3 +49,8 @@
 - Attempted Minio deployment for Velero backup target
 - Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
 - Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
+
+## 2026-10-27
+- Expanded CI pipeline to validate all apps via kubeconform
+- Coverage: Home Assistant, Audiobookshelf, Homepage, Navidrome, Plex, Prometheus
+- Immich excluded — OCI chart requires registry auth for helm template
