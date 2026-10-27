@@ -61,3 +61,9 @@
 - 65MB compressed dump, 7 day retention
 - Credentials from existing SealedSecret, no plaintext in repo
 - Expanded CI pipeline to validate all apps (see earlier entry)
+
+## 2026-10-28
+- Added TLS to Homepage via Traefik IngressRoute using wildcard cert
+- Added Grafana IngressRoute at grafana.codexasystems.net with TLS
+- Updated all 15 Grafana iframe URLs from HTTP to HTTPS
+- Fixes mixed content blocking caused by HSTS includeSubDomains
