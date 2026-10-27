@@ -51,6 +51,13 @@
 - Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
 
 ## 2026-10-27
-- Expanded CI pipeline to validate all apps via kubeconform
-- Coverage: Home Assistant, Audiobookshelf, Homepage, Navidrome, Plex, Prometheus
-- Immich excluded — OCI chart requires registry auth for helm template
+- Added nightly Immich Postgres backup CronJob to NAS
+- 65MB compressed dump, 7 day retention
+- Credentials from existing SealedSecret, no plaintext in repo
+- Expanded CI pipeline to validate all apps (see earlier entry)
+
+## 2026-10-27
+- Added nightly Immich Postgres backup CronJob to NAS
+- 65MB compressed dump, 7 day retention
+- Credentials from existing SealedSecret, no plaintext in repo
+- Expanded CI pipeline to validate all apps (see earlier entry)
