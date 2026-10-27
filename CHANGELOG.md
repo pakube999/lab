@@ -1,9 +1,18 @@
 # Changelog
 
+## 2026-10-28
+- Added TLS to Homepage via Traefik IngressRoute using wildcard cert
+- Added Grafana IngressRoute at grafana.codexasystems.net with TLS
+- Updated all 15 Grafana iframe URLs from HTTP to HTTPS
+- Fixes mixed content blocking caused by HSTS includeSubDomains
+
 ## 2026-10-27
 - Expanded CI pipeline to validate all apps via kubeconform
 - Coverage: Home Assistant, Audiobookshelf, Homepage, Navidrome, Plex, Prometheus
 - Immich excluded — OCI chart requires registry auth for helm template
+- Added nightly Immich Postgres backup CronJob to NAS
+- 65MB compressed dump, 7 day retention
+- Credentials from existing SealedSecret, no plaintext in repo
 
 ## 2026-10-26
 - Added Terraform infrastructure repo (private)
@@ -44,26 +53,3 @@
 
 ## Prior
 - See git log and README for evolutionary history
-
-## 2026-10-25
-- Attempted Minio deployment for Velero backup target
-- Abandoned — MinIO removed community images from Docker Hub (Sep 2026) and quay.io (Sep 2026)
-- Backup strategy deferred pending evaluation of SeaweedFS or alternative S3-compatible storage
-
-## 2026-10-27
-- Added nightly Immich Postgres backup CronJob to NAS
-- 65MB compressed dump, 7 day retention
-- Credentials from existing SealedSecret, no plaintext in repo
-- Expanded CI pipeline to validate all apps (see earlier entry)
-
-## 2026-10-27
-- Added nightly Immich Postgres backup CronJob to NAS
-- 65MB compressed dump, 7 day retention
-- Credentials from existing SealedSecret, no plaintext in repo
-- Expanded CI pipeline to validate all apps (see earlier entry)
-
-## 2026-10-28
-- Added TLS to Homepage via Traefik IngressRoute using wildcard cert
-- Added Grafana IngressRoute at grafana.codexasystems.net with TLS
-- Updated all 15 Grafana iframe URLs from HTTP to HTTPS
-- Fixes mixed content blocking caused by HSTS includeSubDomains
