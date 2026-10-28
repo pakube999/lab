@@ -24,6 +24,8 @@ graph TD
     GitHub[GitHub Actions CI] -.validates PR.-> Repo[Git Repo]
     Repo -.watched by.-> ArgoCD
     ArgoCD -.deploys.-> Apps
+    Terraform[Terraform IaC] -.manages.-> GitHub[Git Repo]
+    Terraform -.manages.-> Cloudflare[Cloudflare DNS]
 ```
 
 - **Cluster**: K3s, 2 nodes — bare metal, repurposed laptops running Ubuntu Server
@@ -34,6 +36,8 @@ graph TD
   cluster-admin-level access
 - **CI**: GitHub Actions — `helm template | kubeconform` validates all manifests on
   PR before merge to main
+- **IaC**: Terraform manages SaaS configuration — GitHub repository settings and branch protection, Cloudflare DNS records and security headers. Separate from ArgoCD by design — see [ADR-007](./docs/adr/ADR-007-terraform-for-saas-config.md)
+- **Ansible**: Planned for new cluster bootstrap — node OS config, k3s HA install. See [ADR-008](./docs/adr/ADR-008-ansible-for-node-bootstrap.md)
 - **Service CIDR**: 10.43.0.0/16 · **Pod CIDR**: 10.42.0.0/16 (K3s defaults)
 - **Sealed Secrets**: As required
 
