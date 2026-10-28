@@ -10,7 +10,7 @@ spec:
     - match: Host(`audiobooks.codexasystems.net`)
       kind: Rule
       services:
-        - name: audiobookshelf-audiobookshelf
+        - name: audiobookshelf
           port: 80
   tls:
     secretName: wildcard-codexasystems-net-tls
