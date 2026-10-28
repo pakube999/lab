@@ -53,3 +53,8 @@
 
 ## Prior
 - See git log and README for evolutionary history
+
+## 2026-10-28
+- Fixed Audiobookshelf IngressRoute pointing to wrong service name
+- Removed old typo'd deployment (audiobbokshelf) and associated PVCs
+- Audiobookshelf now managed cleanly by ArgoCD on correct deployment
