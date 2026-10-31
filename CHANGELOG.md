@@ -58,3 +58,8 @@
 - Fixed Audiobookshelf IngressRoute pointing to wrong service name
 - Removed old typo'd deployment (audiobbokshelf) and associated PVCs
 - Audiobookshelf now managed cleanly by ArgoCD on correct deployment
+
+## 2026-10-31
+- Added startDelay 600s and stopDelay 300s to CNPG cluster spec
+- Prevents crash recovery loop after node dropout (learned from Oct 2026 outage)
+- Immich Postgres outage resolved via pg_resetwal — see blog post
