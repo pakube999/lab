@@ -98,3 +98,38 @@ corrected, since the live cluster already matched the values file exactly.
 - [x] Backed up / persistent data protected — photo/video library lives on NAS, backed up nightly. Postgres metadata backed up nightly via CronJob to NAS (`media/immich/backup/`) — 65MB compressed dump, 7 day retention.
 - [~] Monitored — hardware-level metrics visible on the homepage dashboard; no alerting configured yet, and nothing Immich-specific (job queue health, failed uploads, etc.) — general gap across the cluster, not unique to this app.
 - [x] Full migration from Synology Moments complete — via `immich-cli` bulk import, not the External Library feature (see Gotchas)
+
+## Incident — Oct 2026 CNPG Crash Recovery Loop
+
+A brief network dropout on pakube2 caused all pods to restart simultaneously.
+Postgres entered a crash recovery loop — the CNPG startup probe killed the pod
+before WAL replay could complete, forcing recovery to restart repeatedly.
+
+**Symptoms:**
+- `immich-postgres-1` cycling `Running` → `Completed` → `CrashLoopBackOff` every ~70 seconds
+- CNPG phase: `Waiting for the instances to become active`
+- Log: `FATAL: the database system is starting up`
+
+**Resolution — pg_resetwal:**
+```bash
+# Delete postgres pod to release PVC
+kubectl delete pod immich-postgres-1 -n immich
+
+# Run pg_resetwal via debug pod
+kubectl run postgres-reset \
+  --image=ghcr.io/tensorchord/cloudnative-vectorchord:16-0.4.3 \
+  --restart=Never \
+  --namespace=immich \
+  --overrides='{"spec":{"nodeName":"pakube2","containers":[{"name":"reset","image":"ghcr.io/tensorchord/cloudnative-vectorchord:16-0.4.3","command":["pg_resetwal","-f","/var/lib/postgresql/data/pgdata"],"env":[{"name":"PGDATA","value":"/var/lib/postgresql/data/pgdata"}],"volumeMounts":[{"name":"data","mountPath":"/var/lib/postgresql/data"},{"name":"scratch","mountPath":"/controller"}],"securityContext":{"runAsUser":26,"runAsGroup":26}}],"volumes":[{"name":"data","persistentVolumeClaim":{"claimName":"immich-postgres-1"}},{"name":"scratch","emptyDir":{}}]}}'
+
+# Clean up
+kubectl delete pod postgres-reset -n immich
+```
+
+**Data impact:** Photos safe on NAS. Metadata largely intact. Library rescan triggered as precaution.
+
+**Prevention:** `startDelay: 600` and `stopDelay: 300` added to CNPG cluster spec — gives Postgres more time to complete WAL replay before probe declares failure.
+
+**Long term fix:** CNPG HA with replica on new cluster — automatic failover, no crash recovery needed.
+
+See also: [blog post](https://codexasystems.net/blog/immich-postgres-outage/)
