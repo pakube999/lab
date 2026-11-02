@@ -63,3 +63,8 @@
 - Added startDelay 600s and stopDelay 300s to CNPG cluster spec
 - Prevents crash recovery loop after node dropout (learned from Oct 2026 outage)
 - Immich Postgres outage resolved via pg_resetwal — see blog post
+
+## 2026-11-02
+- Changed Grafana and Prometheus services from LoadBalancer to ClusterIP
+- Both accessed via Traefik IngressRoute with TLS — LoadBalancer no longer needed
+- Reduces unnecessary external exposure on LAN
