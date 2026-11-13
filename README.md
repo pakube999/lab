@@ -5,7 +5,7 @@ A self-hosted Kubernetes cluster (K3s) built as a hands-on learning environment 
 DevOps and platform engineering — infrastructure, observability, GitOps, and
 self-hosted applications, all managed as code.
 
-![K3S Demo](./assets/terminal.gif)
+![Terminal](./assets/terminal.gif)
 
 ## Background
 
