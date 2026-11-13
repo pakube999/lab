@@ -144,22 +144,22 @@ config:
               allowScrolling: no
 
     - PAKUBE Monitor:
-        - PAKube CPU Load:
+        - PAKube CPU Frequency:
             widget:
               type: iframe
               name: PAKUBE trend
-              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-3&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-30m&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-3&refresh=5s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
               loadingStrategy: eager
               allowScrolling: no
 
-        - PAKube2 CPU Load:
+        - PAKube2 CPU Frequency:
             widget:
               type: iframe
               name: PAKUBE2 trend
-              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-1h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-4&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-30m&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-4&refresh=5s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -170,7 +170,7 @@ config:
             widget:
               type: iframe
               name: Pi 1 Temp
-              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-1&refresh=5s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-2h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-1&refresh=5s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -181,7 +181,7 @@ config:
             widget:
               type: iframe
               name: Pi 1 Temp
-              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-6h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-2&refresh=10s&hideLogo=true"
+              src: "https://grafana.codexasystems.net/d-solo/ad2xjfd/new-dashboard?orgId=1&from=now-2h&to=now&timezone=utc&var-datasource=prometheus&var-cluster=$__all&var-instance=192.168.1.10:9100&panelId=panel-2&refresh=10s&hideLogo=true"
               classes: h-52
               referrerPolicy: same-origin
               allowFullscreen: false
@@ -306,8 +306,4 @@ config:
               url: http://192.168.1.6:5380
               key: "{{HOMEPAGE_VAR_TECHNITIUM_TOKEN}}"
 
-
-    - Home-Automation:
-        - homeassistant:
-            icon: homeassistant.png
 
