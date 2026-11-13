@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://codexasystems.net"><strong>codexasystems.net</strong></a>
+  <a href="https://codexasystems.net">🌐 <strong>codexasystems.net</strong></a>
 </p>
 
 ![Helm Validate](https://github.com/pakube999/lab/actions/workflows/helm-lint.yaml/badge.svg)
