@@ -67,7 +67,7 @@ config:
       - PAKUBE Monitor:
           style: row
           columns: 4
-      - PAKUBE Temp
+      - PAKUBE Temp:
           style: row
           columns: 1
       - Prometheus:
