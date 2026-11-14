@@ -67,6 +67,9 @@ config:
       - PAKUBE Monitor:
           style: row
           columns: 4
+      - PAKUBE Temp
+          style: row
+          columns: 1
       - Prometheus:
           style: row
           columns: 1
@@ -210,6 +213,7 @@ config:
               loadingStrategy: eager
               allowScrolling: no
 
+    - PAKUBE Temp
         - PAKUBE CPU Temp:
             widget:
               type: iframe
