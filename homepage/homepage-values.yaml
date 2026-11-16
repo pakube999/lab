@@ -213,7 +213,7 @@ config:
               loadingStrategy: eager
               allowScrolling: no
 
-    - PAKUBE Temp
+    - PAKUBE Temp:
         - PAKUBE CPU Temp:
             widget:
               type: iframe
