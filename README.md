@@ -11,10 +11,29 @@ self-hosted applications, all managed as code.
 
 ![Terminal](./assets/terminal.gif)
 
-## Background
+<h3 align="center">🏠 Homelab</h3>
+<p align="center">
+  2-node k3s cluster · GitOps with ArgoCD · Self-hosted media & monitoring
+</p>
 
-This repo documents the cluster's evolution in infrastructure/DevOps:
-what I built, what broke, and what I'd do differently at scale.
+---
+
+<h3 align="center">🛠️ Tools & Technologies</h3>
+<p align="center">
+  <img src="https://img.shields.io/badge/k3s-FFC61C?style=for-the-badge&logo=k3s&logoColor=black" />
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img src="https://img.shields.io/badge/ArgoCD-EF7B4D?style=for-the-badge&logo=argo&logoColor=white" />
+  <img src="https://img.shields.io/badge/Helm-0F1689?style=for-the-badge&logo=helm&logoColor=white" />
+  <img src="https://img.shields.io/badge/Traefik-24A1C1?style=for-the-badge&logo=traefikproxy&logoColor=white" />
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white" />
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white" />
+  <img src="https://img.shields.io/badge/cert--manager-003A9B?style=for-the-badge&logo=letsencrypt&logoColor=white" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white" />
+  <img src="https://img.shields.io/badge/Hugo-FF4088?style=for-the-badge&logo=hugo&logoColor=white" />
+</p>
+
+---
 
 ## Architecture
 
@@ -46,6 +65,8 @@ graph TD
 - **Ansible**: Planned for new cluster bootstrap — node OS config, k3s HA install. See [ADR-008](./docs/adr/ADR-008-ansible-for-node-bootstrap.md)
 - **Service CIDR**: 10.43.0.0/16 · **Pod CIDR**: 10.42.0.0/16 (K3s defaults)
 - **Sealed Secrets**: As required
+
+---
 
 ## Repo structure
 
