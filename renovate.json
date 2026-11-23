@@ -3,6 +3,7 @@
   "extends": ["config:base"],
   "dependencyDashboard": true,
   "dependencyDashboardAutoclose": false,
+  "platformAutomerge": true,
   "argocd": {
     "fileMatch": ["infra/argocd/applications/.+\\.yaml$"]
   },
@@ -12,7 +13,7 @@
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": false
+      "automerge": true
     },
     {
       "matchPackageNames": ["ghcr.io/immich-app/immich-charts/immich/immich"],
